@@ -166,6 +166,7 @@ public class VolumeDialogImpl implements VolumeDialog {
     private Callback mCallback;
     private boolean mPendingStateChanged;
     private boolean mPendingRecheckAll;
+    private boolean mEnableVolumePanelTint;
     private long mCollapseTime;
     private boolean mHovering = false;
     private int mDensity;
@@ -1018,7 +1019,9 @@ public class VolumeDialogImpl implements VolumeDialog {
         }
         final ColorStateList tint = isActive && row.slider.isEnabled() ? mActiveSliderTint
                 : mInactiveSliderTint;
-        row.slider.setProgressTintList(tint);
+        boolean mEnableVolumePanelTint = mSysUIContext.getResources().getBoolean(mSysUIR.bool("config_enableVolumePanelTint"));
+        final ColorStateList progressTint = isActive && row.slider.isEnabled() ? null : tint;
+        row.slider.setProgressTintList(mEnableVolumePanelTint ? tint : progressTint);
         row.slider.setThumbTintList(tint);
     }
 
