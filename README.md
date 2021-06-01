@@ -2,7 +2,6 @@
 
 This repository (currently) houses 4 different SystemUI Volume Panel Plugins.
 To build and use these as intended, you may need to pick some changes from our [frameworks/base](https://github.com/PotatoProject/frameworks_base).
-
 Then, compile the following modules:
 ```
 AospPanel
@@ -11,6 +10,7 @@ OreoPanel
 TiledPanel
 MiuiPanel
 P404Panel
+ShapeShiftPanel
 ```
 
 **Please refrain from altering packagenames/classpaths and Copyright headers**
